@@ -1,10 +1,10 @@
-import "./globals.css";
+import "./../styles/index.scss";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["100", "300"],
+  weight: ["100", "300", "400"],
   display: "swap"
 });
 
