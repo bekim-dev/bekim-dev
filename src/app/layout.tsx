@@ -1,6 +1,7 @@
 import "./../styles/index.scss";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -21,7 +22,11 @@ interface IRootLayoutProps {
 export default function RootLayout({ children }: IRootLayoutProps) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <GoogleAnalytics measurementId={process.env.GA_MEASUREMENT_ID || ""} />
+
+        {children}
+      </body>
     </html>
   )
 }
