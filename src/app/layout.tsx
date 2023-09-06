@@ -4,8 +4,9 @@ import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["100", "300", "400"],
-  display: "swap"
+  weight: ["100", "300", "400", "500"],
+  display: "swap",
+  style: ["normal", "italic"]
 });
 
 export const metadata: Metadata = {

@@ -1,1 +1,146 @@
-// Modules
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 650px;
+  height: 100vh; // Fallback
+  height: 100dvh;
+  background-color: #f6f6f6;
+  padding: 0 9px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+
+.name {
+  font-size: 43px;
+  font-weight: 300;
+
+  @include atMedium {
+    font-size: 70px;
+  }
+
+  & > span {
+    color: $pink;
+    // Breaks the word into the second line on smallest devices
+    display: inline-block;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
+
+.description {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 300;
+
+  @include atMedium {
+    font-size: 25px;
+  }
+}
+
+.skills {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 75px;
+  max-width: 360px;
+
+  @include atMedium {
+    margin-top: 95px;
+    max-width: 520px;
+  }
+
+  .skill-wrapper {
+    margin: 0 4px 12px 4px;
+
+    @include atMedium {
+      margin: 0 6px 15px 6px;
+    }
+
+    .skill {
+      background-color: #fcfcfc;
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.08);
+      color: rgba(0, 0, 0, 0.7);
+      user-select: none;
+      border-radius: 2px;
+      font-size: 13px;
+      padding: 8px 13px;
+
+      @include atMedium {
+        font-size: 16px;
+        padding: 12px 18px;
+      }
+    }
+  }
+}
+
+.contact-email {
+  width: auto;
+  display: inline-block;
+  position: relative;
+  color: $pink;
+  margin-top: 20px;
+  padding-bottom: 6px;
+  font-size: 14px;
+  align-self: center;
+
+  @include atMedium {
+    font-size: 17px;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding-bottom: 40px;
+  text-align: center;
+
+  .social-icon {
+    margin: 0 5px;
+    user-select: none;
+  }
+}
+
+@include atMedium {
+  .animate-up {
+    // Apply the transition to child elements to prevent hover flickering issue
+    & > * {
+      transition: transform 0.25s;
+    }
+
+    &:hover > * {
+      transform: translateY(-6px);
+    }
+  }
+}
+
+.animate-underline {
+  &::after {
+    position: absolute;
+    content: "";
+    border-bottom: solid 1.5px $pink;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+
+    @include atMedium {
+      border-width: 2px;
+      bottom: 1;
+      transition: transform 0.45s;
+      transform-origin: right;
+      transform: scaleX(0);
+    }
+  }
+
+  @include atMedium {
+    &:hover::after {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+}
