@@ -2,6 +2,7 @@ import "./../styles/index.scss";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
+import { Analytics } from '@vercel/analytics/react';
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: IRootLayoutProps) {
         <GoogleAnalytics measurementId={process.env.GA_MEASUREMENT_ID || ""} />
 
         {children}
+        <Analytics />
       </body>
     </html>
   )
