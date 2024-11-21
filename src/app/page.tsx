@@ -39,7 +39,6 @@ export default function Home() {
       <footer className="footer">
         <SocialIcon url="https://linkedin.com/in/bekim-r" iconSrc="/social/linkedin.svg" />
         <SocialIcon url="https://github.com/bekim-dev" iconSrc="/social/github.svg" />
-        <SocialIcon url="https://fiverr.com/bekim_rexhepi" iconSrc="/social/fiverr.svg" />
       </footer>
     </div>
   )
